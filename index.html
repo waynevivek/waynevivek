@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivek — CSE / AI-ML / DSA / Tri Stick</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+  :root{
+    --paper: #F7F4EC;
+    --paper-dark: #EFEADC;
+    --ink: #1B1B1B;
+    --graphite: #6B6B6B;
+    --accent: #C1443C;
+    --accent-soft: #C1443C22;
+    --line: #1B1B1B33;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Space Mono', monospace;
+    line-height: 1.6;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px);
+    background-size: 100% 2.1em;
+    background-position: 0 7.4em;
+  }
+
+  /* notebook margin rule */
+  body::before{
+    content:"";
+    position: fixed;
+    top:0; bottom:0; left: 64px;
+    width:1px;
+    background: var(--accent-soft);
+    z-index:0;
+  }
+  @media (max-width: 700px){
+    body::before{ left: 28px; }
+  }
+
+  .wrap{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4.5rem 2rem 6rem 5.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 700px){
+    .wrap{ padding: 3rem 1.25rem 4rem 2.75rem; }
+  }
+
+  h1,h2,h3{
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+    margin: 0 0 0.3em 0;
+    line-height: 1.15;
+  }
+
+  /* HERO */
+  .hero{
+    display:flex;
+    align-items:center;
+    gap: 1.75rem;
+    margin-bottom: 3.5rem;
+  }
+  .doodle{ flex-shrink:0; width:96px; height:96px; }
+  .hero h1{ font-size: 2.6rem; }
+  .hero .role{
+    color: var(--graphite);
+    font-size: 0.95rem;
+    margin-top: 0.4rem;
+  }
+  .hero .role .scribble{
+    position: relative;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .scribble::after{
+    content:"";
+    position:absolute;
+    left:-2px; right:-2px; bottom:-3px;
+    height: 6px;
+    background: var(--accent);
+    opacity:0.35;
+    transform: rotate(-1deg);
+    z-index:-1;
+  }
+
+  /* socials */
+  .socials{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-bottom: 3rem;
+  }
+  .socials a{
+    font-family:'Space Mono', monospace;
+    font-size: 0.8rem;
+    text-decoration:none;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 3px;
+    padding: 0.45rem 0.85rem;
+    transition: transform 0.15s ease, background 0.15s ease;
+    display:inline-block;
+    transform: rotate(var(--r,0deg));
+  }
+  .socials a:nth-child(1){ --r: -0.6deg; }
+  .socials a:nth-child(2){ --r: 0.5deg; }
+  .socials a:nth-child(3){ --r: -0.4deg; }
+  .socials a:nth-child(4){ --r: 0.6deg; }
+  .socials a:hover{
+    background: var(--ink);
+    color: var(--paper);
+    transform: rotate(0deg) translateY(-2px);
+  }
+
+  /* section pages */
+  .page{
+    margin-bottom: 3.5rem;
+  }
+  .page .tag{
+    font-family:'Kalam', cursive;
+    color: var(--accent);
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    display:flex;
+    align-items:center;
+    gap: 0.5rem;
+  }
+  .page .tag svg{ width:20px; height:20px; flex-shrink:0; }
+  .page h2{ font-size: 1.5rem; margin-bottom: 0.9rem; }
+
+  .page p{
+    font-size: 0.92rem;
+    color: var(--ink);
+    margin: 0 0 0.7rem 0;
+    max-width: 62ch;
+  }
+  .page ul{
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.2rem;
+  }
+  .page li{
+    font-size: 0.92rem;
+    margin-bottom: 0.45rem;
+  }
+  .page li::marker{ color: var(--accent); }
+
+  /* stack pills */
+  .pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .pill{
+    font-size: 0.75rem;
+    border: 1.5px dashed var(--graphite);
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    color: var(--graphite);
+  }
+
+  /* project cards */
+  .project{
+    border-left: 3px solid var(--accent);
+    padding: 0.2rem 0 0.2rem 1rem;
+    margin-bottom: 1.4rem;
+  }
+  .project h3{
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+  }
+  .project p{ font-size: 0.88rem; color: var(--graphite); margin:0; }
+
+  /* stats */
+  .stats-imgs{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .stats-imgs img{
+    border-radius: 6px;
+    border: 1.5px solid var(--line);
+    max-width: 100%;
+    height: auto;
+  }
+
+  footer{
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1.5px dashed var(--line);
+    font-size: 0.78rem;
+    color: var(--graphite);
+    text-align:center;
+  }
+  footer .scribble2{
+    display:inline-block;
+    margin-top:0.5rem;
+    font-family:'Kalam', cursive;
+    color: var(--accent);
+    font-size: 0.95rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .doodle path{
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: draw 1.6s ease forwards;
+    }
+  }
+  @keyframes draw{ to{ stroke-dashoffset: 0; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <svg class="doodle" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 15 C30 15 22 32 30 45 C24 48 22 56 28 60 C27 68 34 74 42 72 C44 78 56 78 58 72 C66 74 73 68 72 60 C78 56 76 48 70 45 C78 32 70 15 50 15 Z"
+            stroke="#1B1B1B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M40 72 L38 84 M50 74 L50 86 M60 72 L62 84" stroke="#1B1B1B" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M40 40 C42 36 48 36 48 42 M52 42 C52 36 58 36 60 40" stroke="#C1443C" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1>Hey, I'm Vivek</h1>
+      <div class="role">CSE undergrad, sketching ideas in <span class="scribble">code &amp; doodles</span></div>
+    </div>
+  </div>
+
+  <nav class="socials">
+    <a href="https://www.linkedin.com/in/vivek-neural-vibe/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://leetcode.com/u/wayne_vibes/" target="_blank" rel="noopener">LeetCode</a>
+    <a href="https://www.codechef.com/users/wayne_vibes" target="_blank" rel="noopener">CodeChef</a>
+    <a href="https://www.hackerrank.com/profile/vivek_neuralvibe" target="_blank" rel="noopener">HackerRank</a>
+  </nav>
+
+  <section class="page">
+    <div class="tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C1443C" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      about
+    </div>
+    <h2>What I'm about</h2>
+    <p>First-year CSE student at ABES Engineering College, Ghaziabad — currently splitting time between three lanes: AI/ML engineering, DSA in C++, and full-stack dev with React + Vite.</p>
+    <p>Outside class, I run <strong>Tri Stick</strong>, a doodle-animation YouTube channel where I explain evolutionary psychology and philosophy in hand-drawn style. I'm also chipping away at a value-investing framework (Munger &amp; Buffett) applied to Indian markets, and reading around Vedantic philosophy.</p>
+  </section>
+
+  <section class="page">
+    <div class="tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C1443C" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+      stack
+    </div>
+    <h2>Tools I reach for</h2>
+    <div class="pills">
+      <span class="pill">C++</span>
+      <span class="pill">JavaScript</span>
+      <span class="pill">Python</span>
+      <span class="pill">React</span>
+      <span class="pill">Vite</span>
+      <span class="pill">HTML / CSS</span>
+      <span class="pill">Git</span>
+      <span class="pill">WSL / Linux</span>
+      <span class="pill">Vercel</span>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C1443C" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/></svg>
+      building
+    </div>
+    <h2>What I'm building</h2>
+
+    <div class="project">
+      <h3>Project Antigravity</h3>
+      <p>Amazon homepage clone — React 18, Vite, CSS Modules, Context API. Deployed on Vercel.</p>
+    </div>
+    <div class="project">
+      <h3>Design Portfolio Site</h3>
+      <p>Hand-coded HTML/CSS/JS, built as a staged step toward React — with an original Tri Stick–style hero illustration.</p>
+    </div>
+    <div class="project">
+      <h3>Munger–Buffett Stock Screener</h3>
+      <p>Applying value-investing principles to Indian equities, with a visualization dashboard on top.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C1443C" stroke-width="2"><path d="M3 3v18h18M8 17V10M13 17V6M18 17v-4"/></svg>
+      stats
+    </div>
+    <h2>GitHub stats</h2>
+    <div class="stats-imgs">
+      <img src="https://github-readme-stats.vercel.app/api?username=waynevivek&show_icons=true&theme=default&hide_border=true" height="165" alt="GitHub stats" />
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=waynevivek&hide_border=true" height="165" alt="GitHub streak stats" />
+    </div>
+  </section>
+
+  <footer>
+    thanks for stopping by
+    <div class="scribble2">— Vivek</div>
+  </footer>
+
+</div>
+</body>
+</html>
