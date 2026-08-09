@@ -3,19 +3,17 @@
 
 <p align="center">
   <a href="https://www.linkedin.com/in/vivek-neural-vibe/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="https://leetcode.com/u/wayne_vibes/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" /></a>
+  <a href="mailto:vivek.neuralvibe@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
   <a href="https://www.codechef.com/users/wayne_vibes"><img src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" /></a>
-  <a href="https://www.hackerrank.com/profile/vivek_neuralvibe"><img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white" /></a>
 </p>
 
 ---
 
 ### 🚀 About Me
 
-- 🎓 First-year CSE student, ABES Engineering College, Ghaziabad
+- 🎓 Second-year CSE student
 - 🧠 Focused on **AI/ML engineering**, **DSA in C++**, and **full-stack development** (React + Vite)
 - 📈 Also into **value investing** (Munger–Buffett framework applied to Indian markets) and Vedantic philosophy
-- 🎨 I run **[Tri Stick](#)**, a doodle-animation YouTube channel making evolutionary psychology & philosophy explainers
 - 🌱 Currently learning ML through NPTEL's *Introduction to Machine Learning* (IIT Madras)
 - 👀 Interested in data visualization as my elective specialization
 
@@ -61,7 +59,5 @@
 
 <p align="center">
   <a href="https://www.linkedin.com/in/vivek-neural-vibe/">LinkedIn</a> •
-  <a href="https://leetcode.com/u/wayne_vibes/">LeetCode</a> •
-  <a href="https://www.codechef.com/users/wayne_vibes">CodeChef</a> •
-  <a href="https://www.hackerrank.com/profile/vivek_neuralvibe">HackerRank</a>
+  <a href="mailto:vivek.neuralvibe@gmail.com">Email</a>
 </p>
