@@ -46,15 +46,6 @@
 
 ---
 
-### 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=waynevivek&show_icons=true&theme=default&hide_border=true" height="165" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=waynevivek&hide_border=true" height="165" />
-</p>
-
----
-
 ### 📫 Reach Me
 
 <p align="center">
